@@ -1,0 +1,4 @@
+1-set up the ui done
+2-make sure the it is responsive done
+3-add the script done
+4-test done

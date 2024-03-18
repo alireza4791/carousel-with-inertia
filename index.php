@@ -1,5 +1,5 @@
 <script>
-  const sliders = document.querySelector(".carousel");
+  const carousel = document.querySelector(".carousel");
   const params = {
     inertiaMultiplier: 0.955,
     inertiaThreshold: 0.5
@@ -14,14 +14,14 @@
   var velX = 0;
   var momentumID;
 
-  sliders.addEventListener("mousedown", handleMouseDown);
-  sliders.addEventListener("touchstart", handleTouchStart);
-  sliders.addEventListener("mouseleave", handleMouseLeave);
-  sliders.addEventListener("mouseup", handleMouseUp);
-  sliders.addEventListener("touchend", handleTouchEnd);
-  sliders.addEventListener("mousemove", handleMouseMove);
-  sliders.addEventListener("touchmove", handleTouchMove);
-  sliders.addEventListener("wheel", handleWheel);
+  carousel.addEventListener("mousedown", handleMouseDown);
+  carousel.addEventListener("touchstart", handleTouchStart);
+  carousel.addEventListener("mouseleave", handleMouseLeave);
+  carousel.addEventListener("mouseup", handleMouseUp);
+  carousel.addEventListener("touchend", handleTouchEnd);
+  carousel.addEventListener("mousemove", handleMouseMove);
+  carousel.addEventListener("touchmove", handleTouchMove);
+  carousel.addEventListener("wheel", handleWheel);
 
   function beginMomentumTracking() {
     cancelMomentumTracking();
@@ -33,7 +33,7 @@
   }
 
   function momentumLoop() {
-    sliders.scrollLeft += velX;
+    carousel.scrollLeft += velX;
     velX *= params.inertiaMultiplier;
     if (Math.abs(velX) > params.inertiaThreshold) {
       momentumID = requestAnimationFrame(momentumLoop);
